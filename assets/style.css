@@ -1,0 +1,221 @@
+/* ===========================================================
+   Class 8 Maths — High-Yield Notes
+   Shared stylesheet: dark theme on screen, clean B&W for print/PDF
+   =========================================================== */
+:root{
+  --bg:#0f1226; --bg2:#171a36; --card:#1e2247; --card2:#252a55;
+  --ink:#eef1ff; --muted:#aab1e0; --accent:#ffcf4d; --accent2:#ff7ab8;
+  --green:#48d597; --red:#ff6b6b; --blue:#5db5ff; --purple:#b07bff;
+  --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.35); font-size:17px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+  background:radial-gradient(1200px 700px at 80% -10%, #2a2160 0%, transparent 55%),
+             radial-gradient(900px 600px at -10% 10%, #1c3a66 0%, transparent 50%), var(--bg);
+  color:var(--ink); line-height:1.6;
+}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ---- Top nav ---- */
+header.bar{position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);
+  background:rgba(15,18,38,.85);border-bottom:1px solid rgba(255,255,255,.08);padding:10px 16px}
+.bar-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:800;font-size:1rem}
+.brand span{color:var(--accent)}
+.crumb{color:var(--muted);font-size:.85rem}
+.crumb a{color:var(--muted)}
+.spacer{margin-left:auto}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tabs a{background:var(--card2);border:1px solid rgba(255,255,255,.1);color:var(--ink);
+  padding:6px 13px;border-radius:999px;font-size:.83rem;font-weight:700}
+.tabs a.active{background:linear-gradient(90deg,var(--accent2),var(--accent));color:#2a1430;border:none}
+.dl{background:var(--card2);border:1px solid rgba(255,255,255,.14);color:var(--ink);
+  padding:6px 13px;border-radius:999px;font-size:.83rem;font-weight:700}
+.dl:hover{background:#2e3568;text-decoration:none}
+
+main{max-width:1000px;margin:0 auto;padding:24px 16px 80px}
+
+/* ---- Hero ---- */
+.hero{text-align:center;padding:28px 18px 4px}
+.hero .kicker{color:var(--accent2);font-weight:800;letter-spacing:2px;text-transform:uppercase;font-size:.78rem}
+.hero h1{font-size:2.2rem;margin:.2em 0 .1em;line-height:1.12}
+.hero h1 .hl{color:var(--accent)}
+.hero p.lead{color:var(--muted);max-width:680px;margin:.4em auto 0}
+
+/* ---- Cards ---- */
+section.card{background:linear-gradient(180deg,var(--card),var(--bg2));border:1px solid rgba(255,255,255,.07);
+  border-radius:var(--radius);padding:22px 22px;margin:20px 0;box-shadow:var(--shadow)}
+section.card h2{font-size:1.45rem;margin:.1em 0 .5em;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.badge{font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:999px;background:var(--card2);color:var(--accent);
+  border:1px solid rgba(255,255,255,.1);text-transform:uppercase;letter-spacing:1px}
+.badge.trap{color:var(--red)} .badge.ex{color:var(--green)} .badge.pr{color:var(--blue)}
+section.card h3{font-size:1.08rem;margin:1.05em 0 .3em;color:var(--accent)}
+.muted{color:var(--muted)}
+
+/* ---- Callouts ---- */
+.callout{border-left:4px solid var(--blue);background:rgba(93,181,255,.08);padding:11px 15px;border-radius:0 12px 12px 0;margin:13px 0}
+.callout.warn{border-color:var(--accent);background:rgba(255,207,77,.08)}
+.callout.fun{border-color:var(--accent2);background:rgba(255,122,184,.08)}
+.callout.danger{border-color:var(--red);background:rgba(255,107,107,.08)}
+.callout b{color:var(--ink)}
+
+.mathbox{font-size:1.1rem;background:rgba(255,255,255,.04);border:1px dashed rgba(255,255,255,.18);
+  border-radius:12px;padding:11px 15px;margin:11px 0;text-align:center}
+code,.mono{font-family:"SF Mono",Menlo,Consolas,monospace;background:rgba(255,255,255,.08);padding:1px 6px;border-radius:6px}
+sup{font-size:.72em}
+
+/* ---- Tables ---- */
+table.tbl{width:100%;border-collapse:collapse;margin:13px 0;font-size:.95rem}
+table.tbl th,table.tbl td{border:1px solid rgba(255,255,255,.14);padding:7px 9px;text-align:center}
+table.tbl th{background:var(--card2);color:var(--accent)}
+
+.keyline{display:flex;gap:10px;align-items:flex-start;margin:9px 0}
+.keyline .k{color:var(--green);font-weight:800;flex:0 0 auto}
+ul.clean{margin:.4em 0 .4em 1.1em;padding:0}
+ul.clean li{margin:.35em 0}
+
+/* ---- Worked example (model solution) ---- */
+.solution{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;margin:12px 0}
+.solution .qline{font-weight:700;margin-bottom:6px}
+.solution .step{margin:.35em 0;display:flex;gap:8px}
+.solution .step .lbl{color:var(--blue);font-weight:800;flex:0 0 auto;min-width:62px}
+.finalbox{display:inline-block;margin-top:8px;border:2px solid var(--green);background:rgba(72,213,151,.10);
+  color:var(--ink);font-weight:800;padding:6px 14px;border-radius:10px}
+
+/* ---- Worksheet questions ---- */
+.qitem{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:13px 16px;margin:12px 0}
+.qitem .qtag{font-size:.7rem;font-weight:800;color:var(--blue);text-transform:uppercase;letter-spacing:1px}
+.qitem .marks{float:right;font-weight:800;color:var(--accent);font-size:.82rem}
+.writelines{margin-top:10px}
+.writelines .wl{border-bottom:1px solid rgba(255,255,255,.18);height:24px}
+
+/* ---- Answer key ---- */
+.akrow{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.akrow .an{color:var(--green);font-weight:800;flex:0 0 auto;min-width:46px}
+
+/* ---- Geometry figures (inline SVG) ---- */
+.fig{display:block;margin:14px auto;max-width:100%;height:auto;color:var(--ink)}
+.fig .edge{fill:none;stroke:var(--blue);stroke-width:2.2;stroke-linejoin:round}
+.fig .edge2{fill:none;stroke:var(--accent2);stroke-width:2.2}
+.fig .diag{fill:none;stroke:var(--accent);stroke-width:1.8;stroke-dasharray:5 4}
+.fig .fillshape{fill:rgba(93,181,255,.10);stroke:var(--blue);stroke-width:2.2;stroke-linejoin:round}
+.fig .mark{fill:none;stroke:currentColor;stroke-width:1.6}
+.fig .vtx{fill:currentColor;font-weight:700;font-size:15px;font-family:Georgia,serif}
+.fig .lbl{fill:var(--muted);font-size:13px;font-family:"Segoe UI",sans-serif}
+.fig .ang{fill:var(--accent);font-size:13px;font-weight:700;font-family:"Segoe UI",sans-serif}
+.fig .rt{fill:none;stroke:currentColor;stroke-width:1.4}
+.figcap{text-align:center;color:var(--muted);font-size:.82rem;margin:-6px 0 12px}
+.figwrap{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:10px;margin:14px 0}
+
+/* ---- Interactive quiz ---- */
+.quizbar{position:sticky;top:60px;z-index:20;display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  background:var(--card2);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:9px 14px;margin:6px 0 14px}
+.quizbar .score{font-weight:800;color:var(--accent)}
+.quizbar .hint{color:var(--muted);font-size:.85rem}
+.quizbar button{background:var(--card);border:1px solid rgba(255,255,255,.14);color:var(--ink);padding:6px 12px;border-radius:999px;font-size:.8rem}
+.opts{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+.opt{display:block;text-align:left;background:var(--bg);border:1px solid rgba(255,255,255,.16);color:var(--ink);
+  padding:9px 13px;border-radius:10px;font-size:.95rem;font-weight:600}
+.opt:hover{border-color:var(--accent);transform:translateX(2px)}
+.opt.correct{background:rgba(72,213,151,.18);border-color:var(--green);color:#c9ffe5}
+.opt.wrong{background:rgba(255,107,107,.16);border-color:var(--red);color:#ffd9d9}
+.opt:disabled{cursor:default;opacity:.92}
+.opt .mk{font-weight:900;margin-left:8px}
+.fillrow{display:flex;gap:8px;align-items:center;margin-top:10px;flex-wrap:wrap}
+.fillrow input{font-family:inherit;font-size:1rem;background:var(--bg);color:var(--ink);
+  border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:8px 12px;width:160px}
+.fillrow button{background:linear-gradient(90deg,var(--accent2),var(--accent));color:#2a1430;padding:8px 14px;border-radius:10px;font-weight:700}
+.feedback{margin-top:8px;font-weight:700;font-size:.9rem;min-height:1.1em}
+.feedback.ok{color:var(--green)} .feedback.no{color:var(--red)}
+.selfcheck{margin-top:10px}
+.selfcheck summary{cursor:pointer;color:var(--blue);font-weight:700;font-size:.88rem}
+.selfcheck .reveal{margin-top:6px;border-left:4px solid var(--green);background:rgba(72,213,151,.08);padding:8px 12px;border-radius:0 10px 10px 0;font-size:.92rem}
+
+/* ---- Home / hub cards grid ---- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px;margin:20px 0}
+.tile{display:block;background:linear-gradient(180deg,var(--card),var(--bg2));border:1px solid rgba(255,255,255,.08);
+  border-radius:14px;padding:18px;color:var(--ink);transition:.15s}
+.tile:hover{transform:translateY(-3px);text-decoration:none;border-color:rgba(255,207,77,.4)}
+.tile h3{margin:.1em 0 .3em;color:var(--accent);font-size:1.1rem}
+.tile p{margin:0;color:var(--muted);font-size:.88rem}
+.tile .status{display:inline-block;margin-top:10px;font-size:.72rem;font-weight:800;padding:2px 9px;border-radius:999px;
+  background:var(--card2);color:var(--green);border:1px solid rgba(255,255,255,.1)}
+.tile .status.soon{color:var(--muted)}
+.dllinks{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.dllinks a{font-size:.78rem;font-weight:700;background:var(--card2);border:1px solid rgba(255,255,255,.12);
+  padding:4px 10px;border-radius:999px}
+
+.footer{text-align:center;color:var(--muted);font-size:.82rem;margin-top:30px}
+
+/* ===========================================================
+   PRINT / PDF  —  clean black & white, serif, writing space
+   (weasyprint renders this; browsers use it when printing)
+   =========================================================== */
+@media print{
+  @page{ size:A4; margin:15mm 14mm; }
+  body{background:#fff!important;color:#000!important;
+    font-family:Georgia,"Times New Roman",serif;font-size:12pt;line-height:1.45}
+  a{color:#000!important;text-decoration:none}
+  header.bar,.tabs,.dl,.spacer,.crumb,.footer .noprint,.noprint{display:none!important}
+  main{max-width:none;padding:0}
+  .hero{padding:0 0 6px}
+  .hero .kicker{color:#000!important;letter-spacing:1px}
+  .hero h1{font-size:18pt;color:#000!important}
+  .hero h1 .hl{color:#000!important}
+  .hero p.lead{color:#222!important;font-size:11pt}
+
+  section.card{background:#fff!important;box-shadow:none;border:none;border-radius:0;
+    padding:0;margin:10px 0;page-break-inside:auto}
+  section.card h2{font-size:14pt;color:#000!important;border-bottom:2px solid #000;padding-bottom:3px}
+  .badge{display:none}
+  section.card h3{font-size:12.5pt;color:#000!important;text-decoration:underline}
+  .muted,.solution .step .lbl,.qitem .qtag,.akrow .an,.keyline .k{color:#000!important}
+
+  .callout,.callout.warn,.callout.fun,.callout.danger{background:#fff!important;
+    border:1px solid #000;border-left:3px solid #000;border-radius:0;padding:7px 10px;page-break-inside:avoid}
+  .callout b{color:#000!important}
+  .mathbox{background:#fff!important;border:1px dashed #000;color:#000;font-size:11.5pt}
+  code,.mono{background:#eee!important;color:#000}
+
+  table.tbl{font-size:11pt}
+  table.tbl th,table.tbl td{border:1px solid #000;color:#000}
+  table.tbl th{background:#eee!important;color:#000!important}
+
+  .solution{background:#fff!important;border:1px solid #000;border-radius:0;page-break-inside:avoid}
+  .finalbox{border:2px solid #000;background:#fff!important;color:#000!important}
+
+  .qitem{background:#fff!important;border:1px solid #000;border-radius:0;page-break-inside:avoid}
+  .qitem .marks{color:#000!important}
+  .writelines .wl{border-bottom:1px solid #000}
+
+  .akrow{border-bottom:1px solid #000}
+
+  .grid,.tile,.dllinks{display:none!important}
+  .pagebreak{page-break-before:always}
+
+  /* quiz elements → plain printable text */
+  .quizbar,.feedback{display:none!important}
+  .opts{display:block;margin-top:4px}
+  .opt{display:inline;background:#fff!important;border:none!important;color:#000!important;
+    padding:0 10px 0 0;font-weight:normal;border-radius:0;transform:none!important}
+  .opt .mk{display:none}
+  .fillrow input{border:none;border-bottom:1px solid #000;border-radius:0;width:120px;background:#fff}
+  .fillrow button{display:none!important}
+  .selfcheck{display:none!important}
+
+  /* geometry figures → solid black on white */
+  .figwrap{background:#fff!important;border:1px solid #000;page-break-inside:avoid}
+  .fig{color:#000!important}
+  .fig .edge,.fig .edge2{stroke:#000!important}
+  .fig .diag{stroke:#000!important;stroke-dasharray:5 4}
+  .fig .fillshape{fill:#fff!important;stroke:#000!important}
+  .fig .mark,.fig .rt{stroke:#000!important}
+  .fig .vtx{fill:#000!important}
+  .fig .lbl{fill:#000!important}
+  .fig .ang{fill:#000!important}
+  .figcap{color:#000!important}
+}
